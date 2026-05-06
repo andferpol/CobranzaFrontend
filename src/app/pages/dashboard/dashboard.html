@@ -1,0 +1,45 @@
+<h2>Lista de Clientes</h2>
+<table class="clientes-table">
+  <thead>
+    <tr>
+      <th>Código Empresa Cedente</th>
+      <th>Identificación Cliente</th>
+      <th>Tipo Identificación</th>
+      <th>Nombre Completo</th>
+      <th>Código Cliente</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of clientes">
+      <td>{{ cliente.codigoEmpresaCedente }}</td>
+      <td>{{ cliente.identificacionCliente }}</td>
+      <td>{{ cliente.tipoIdentificacion }}</td>
+      <td>{{ cliente.nombreCompleto }}</td>
+      <td>{{ cliente.codigoCliente }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Resumen de Operaciones</h2>
+<table class="operaciones-table">
+  <thead>
+    <tr>
+      <th>Código Cliente</th>
+      <th>Operaciones</th>
+      <th>Mayor Mora</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let op of resumenOperaciones">
+      <td>{{ op.codigoCliente }}</td>
+      <td>{{ op.operaciones }}</td>
+      <td>{{ op.mayorMora }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button class="action-button" (click)="inactivarOperaciones()">Inactivar Operaciones</button>
+
+<h2>Registrar Intención de Pago</h2>
+<button class="action-button" (click)="registrarConvenio()">Registrar Convenio</button>
+<p class="mensaje">{{ mensajeConvenio }}</p>
